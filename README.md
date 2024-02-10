@@ -9,10 +9,8 @@
 <p>- Linkedin: https://www.linkedin.com/in/joel-fernandes-25838425/</p>
 <p>- Facebook: https://www.facebook.com/JoelFernandesSilvaFilho/</p>
 --------------------------------------------------------------------------
-#--------------------------------------------------------------------------------------------------------------------------#
 Vamos primeiramente criar um serviço para executar um scrip shell
-#--------------------------------------------------------------------------------------------------------------------------#
-vim /etc/systemd/system/ip.service
+<p>#vim /etc/systemd/system/ip.service<p>
 [Unit]
 Description=Update IP
 After=network.target
@@ -23,9 +21,9 @@ ExecStart=/bin/bash /etc/ip.sh
 
 [Install]
 WantedBy=multi-user.target
-#--------------------------------------------------------------------------------------------------------------------------#
+
 Agora vamos criar o script que irá gerar a variável do IP
-#--------------------------------------------------------------------------------------------------------------------------#
+
 vim /etc/ip.sh
 inet_value=$(ifconfig | awk '/inet / && $1 !~ /lo/{gsub("addr:",""); print $2; exit}')
 echo $inet_value
@@ -33,20 +31,17 @@ echo $inet_value
 Vamos tornar o arquivo executável
 chmod +x /etc/ip.sh
 
-#--------------------------------------------------------------------------------------------------------------------------#
 Vamos iniciar o serviço 
-#--------------------------------------------------------------------------------------------------------------------------#
+
 systemctl start ip.service
 
-#--------------------------------------------------------------------------------------------------------------------------#
 Vamos habilitar o serviço 
-#--------------------------------------------------------------------------------------------------------------------------#
+
 systemctl enable ip.service
 Created symlink /etc/systemd/system/multi-user.target.wants/ip.service → /etc/systemd/system/ip.service.
 
-#--------------------------------------------------------------------------------------------------------------------------#
 Vamos edite o arquivo /etc/hosts
-#--------------------------------------------------------------------------------------------------------------------------#
+
 vim /etc/hosts
 127.0.0.1 localhost
 127.0.1.1 ubuntu
