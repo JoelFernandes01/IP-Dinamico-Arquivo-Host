@@ -42,29 +42,27 @@ Vamos edite o arquivo /etc/hosts
 <p>127.0.0.1 localhost</p>
 <p>127.0.1.1 ubuntu</p>
 
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
+<p># The following lines are desirable for IPv6 capable hosts</p>
+<p>::1     ip6-localhost ip6-loopback</p>
+<p>fe00::0 ip6-localnet</p>
+<p>ff00::0 ip6-mcastprefix</p>
+<p>ff02::1 ip6-allnodes</p>
+<p>ff02::2 ip6-allrouters</p>
 
-'$inet_value'   ubuntu
+<p>'$inet_value'   ubuntu</p>
 
-#--------------------------------------------------------------------------------------------------------------------------#
 Verifique se o comando funcionou e pegou o IP atual do servidor
-#--------------------------------------------------------------------------------------------------------------------------#
- systemctl status ip.service
-○ ip.service - Update IP
-     Loaded: loaded (/etc/systemd/system/ip.service; enabled; vendor preset: enabled)
-     Active: inactive (dead) since Sat 2024-02-10 01:27:28 UTC; 4s ago
-    Process: 2371 ExecStart=/bin/bash /etc/ip.sh (code=exited, status=0/SUCCESS)
-   Main PID: 2371 (code=exited, status=0/SUCCESS)
-        CPU: 29ms
+<p>#systemctl status ip.service</p>
+<p>○ ip.service - Update IP</p>
+<p>     Loaded: loaded (/etc/systemd/system/ip.service; enabled; vendor preset: enabled)</p>
+<p>     Active: inactive (dead) since Sat 2024-02-10 01:27:28 UTC; 4s ago</p>
+<p>    Process: 2371 ExecStart=/bin/bash /etc/ip.sh (code=exited, status=0/SUCCESS)</p>
+<p>   Main PID: 2371 (code=exited, status=0/SUCCESS)</p>
+<p>        CPU: 29ms</p>
 
-Feb 10 01:27:28 ubuntu systemd[1]: Started Update IP.
-Feb 10 01:27:28 ubuntu bash[2371]: 192.168.1.53
-Feb 10 01:27:28 ubuntu systemd[1]: ip.service: Deactivated successfully.
+<p>Feb 10 01:27:28 ubuntu systemd[1]: Started Update IP.</p>
+<p>Feb 10 01:27:28 ubuntu bash[2371]: 192.168.1.53</p>
+<p>Feb 10 01:27:28 ubuntu systemd[1]: ip.service: Deactivated successfully.</p>
 
 <h4>Observação:</h4>
 <p>Esse procedimento me ajudou, espero que te ajude também </p>
