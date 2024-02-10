@@ -61,7 +61,7 @@ Verifique se o comando funcionou e pegou o IP atual do servidor
 <p>        CPU: 29ms</p>
 
 <p>Feb 10 01:27:28 ubuntu systemd[1]: Started Update IP.</p>
-<p>Feb 10 01:27:28 ubuntu bash[2371]: <b>192.168.1.53<b></p>
+<p>Feb 10 01:27:28 ubuntu bash[2371]: <b><s>192.168.1.53</s></b></p>
 <p>Feb 10 01:27:28 ubuntu systemd[1]: ip.service: Deactivated successfully.</p>
 
 <h4>Observação:</h4>
