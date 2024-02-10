@@ -10,14 +10,14 @@
 <p>- Facebook: https://www.facebook.com/JoelFernandesSilvaFilho/</p>
 --------------------------------------------------------------------------
 Vamos primeiramente criar um serviço para executar um scrip shell
-<p>#vim /etc/systemd/system/ip.service<p>
-[Unit]
-Description=Update IP
-After=network.target
+<p>#vim /etc/systemd/system/ip.service</p>
+<p>[Unit]</p>
+<p>Description=Update IP</p>
+<p>After=network.target</p>
 
-[Service]
-Type=simple
-ExecStart=/bin/bash /etc/ip.sh
+<p>[Service]</p>
+<p>Type=simple</p>
+<p>ExecStart=/bin/bash /etc/ip.sh</p>
 
 [Install]
 WantedBy=multi-user.target
