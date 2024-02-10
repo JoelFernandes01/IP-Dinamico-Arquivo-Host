@@ -3,13 +3,12 @@
 <p>Preciso constantemente editar o arquivo /etc/hosts para colocar o IP atual da máquina</p>
 <p>Usei o mesmo procedimento no Script com instalação do Zabbix, e durante o script funciona perfeitamente, mas e quando não tem script ?</p>
 
-<p>Desenvolvido e personalizado por Joel Fernandes</p>
 <h2>Meus contatos :</h2>
 <p>- Celular:  (61) 98468-1921</p>
 <p>- Linkedin: https://www.linkedin.com/in/joel-fernandes-25838425/</p>
 <p>- Facebook: https://www.facebook.com/JoelFernandesSilvaFilho/</p>
 
-Vamos primeiramente criar um serviço para executar um scrip shell
+Vamos primeiramente criar um serviço para executar um script shell
 <b><p>#vim /etc/systemd/system/ip.service</p></b>
 <p>[Unit]</p>
 <p>Description=Update IP</p>
