@@ -1,4 +1,4 @@
-<h2>Procedimento para o IP da máquina ser atualizado dentro do arquivo /etc/hosts automaticamente </h2>
+<h3>Procedimento para o IP da máquina ser atualizado dentro do arquivo /etc/hosts automaticamente </h3>
 
 <p>Preciso constantemente editar o arquivo /etc/hosts para colocar o IP atual da máquina</p>
 <p>Usei o mesmo procedimento no Script com instalação do Zabbix, e durante o script funciona perfeitamente, mas e quando não tem script ?</p>
