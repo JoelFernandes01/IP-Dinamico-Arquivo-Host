@@ -8,7 +8,7 @@
 <p>- Celular:  (61) 98468-1921</p>
 <p>- Linkedin: https://www.linkedin.com/in/joel-fernandes-25838425/</p>
 <p>- Facebook: https://www.facebook.com/JoelFernandesSilvaFilho/</p>
---------------------------------------------------------------------------
+
 Vamos primeiramente criar um serviço para executar um scrip shell
 <b><p>#vim /etc/systemd/system/ip.service</p></b>
 <p>[Unit]</p>
@@ -28,7 +28,7 @@ Agora vamos criar o script que irá gerar a variável do IP
 <p>echo $inet_value</p>
 
 <p>Vamos tornar o arquivo executável</p>
-<b><p>chmod +x /etc/ip.sh</p></b>
+<b><p>#chmod +x /etc/ip.sh</p></b>
 
 Vamos iniciar o serviço
 <b><p>#systemctl start ip.service</p></b>
@@ -37,7 +37,7 @@ Vamos habilitar o serviço
 <b><p>#systemctl enable ip.service</p></b>
 <p>Created symlink /etc/systemd/system/multi-user.target.wants/ip.service → /etc/systemd/system/ip.service.</p>
 
-Vamos edite o arquivo /etc/hosts
+Vamos editar o arquivo /etc/hosts
 <b><p>#vim /etc/hosts</p></b>
 <p>127.0.0.1 localhost</p>
 <p>127.0.1.1 ubuntu</p>
@@ -49,7 +49,7 @@ Vamos edite o arquivo /etc/hosts
 <p>ff02::1 ip6-allnodes</p>
 <p>ff02::2 ip6-allrouters</p>
 
-<p>'$inet_value'   ubuntu</p>
+<p><b>'$inet_value'</b>   ubuntu  <b><-------- linha adicionada com a variável</b></p>
 
 Verifique se o comando funcionou e pegou o IP atual do servidor
 <b><p>#systemctl status ip.service</p></b>
