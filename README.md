@@ -19,32 +19,28 @@ Vamos primeiramente criar um serviço para executar um scrip shell
 <p>Type=simple</p>
 <p>ExecStart=/bin/bash /etc/ip.sh</p>
 
-[Install]
-WantedBy=multi-user.target
+<p>[Install]</p>
+<p>WantedBy=multi-user.target</p>
 
 Agora vamos criar o script que irá gerar a variável do IP
+<p>#vim /etc/ip.sh</p>
+<p>inet_value=$(ifconfig | awk '/inet / && $1 !~ /lo/{gsub("addr:",""); print $2; exit}')</p>
+<p>echo $inet_value</p>
 
-vim /etc/ip.sh
-inet_value=$(ifconfig | awk '/inet / && $1 !~ /lo/{gsub("addr:",""); print $2; exit}')
-echo $inet_value
+<p>Vamos tornar o arquivo executável</p>
+<p>chmod +x /etc/ip.sh</p>
 
-Vamos tornar o arquivo executável
-chmod +x /etc/ip.sh
-
-Vamos iniciar o serviço 
-
-systemctl start ip.service
+Vamos iniciar o serviço
+<p>#systemctl start ip.service</p>
 
 Vamos habilitar o serviço 
-
-systemctl enable ip.service
-Created symlink /etc/systemd/system/multi-user.target.wants/ip.service → /etc/systemd/system/ip.service.
+<p>#systemctl enable ip.service</p>
+<p>Created symlink /etc/systemd/system/multi-user.target.wants/ip.service → /etc/systemd/system/ip.service.</p>
 
 Vamos edite o arquivo /etc/hosts
-
-vim /etc/hosts
-127.0.0.1 localhost
-127.0.1.1 ubuntu
+<p>#vim /etc/hosts</p>
+<p>127.0.0.1 localhost</p>
+<p>127.0.1.1 ubuntu</p>
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     ip6-localhost ip6-loopback
