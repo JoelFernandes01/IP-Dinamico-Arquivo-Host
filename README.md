@@ -10,7 +10,7 @@
 <p>- Facebook: https://www.facebook.com/JoelFernandesSilvaFilho/</p>
 --------------------------------------------------------------------------
 Vamos primeiramente criar um serviço para executar um scrip shell
-<p>#vim /etc/systemd/system/ip.service</p>
+<b><p>#vim /etc/systemd/system/ip.service</p></b>
 <p>[Unit]</p>
 <p>Description=Update IP</p>
 <p>After=network.target</p>
@@ -23,22 +23,22 @@ Vamos primeiramente criar um serviço para executar um scrip shell
 <p>WantedBy=multi-user.target</p>
 
 Agora vamos criar o script que irá gerar a variável do IP
-<p>#vim /etc/ip.sh</p>
+<b><p>#vim /etc/ip.sh</p></b>
 <p>inet_value=$(ifconfig | awk '/inet / && $1 !~ /lo/{gsub("addr:",""); print $2; exit}')</p>
 <p>echo $inet_value</p>
 
 <p>Vamos tornar o arquivo executável</p>
-<p>chmod +x /etc/ip.sh</p>
+<b><p>chmod +x /etc/ip.sh</p></b>
 
 Vamos iniciar o serviço
-<p>#systemctl start ip.service</p>
+<b><p>#systemctl start ip.service</p></b>
 
 Vamos habilitar o serviço 
-<p>#systemctl enable ip.service</p>
+<b><p>#systemctl enable ip.service</p></b>
 <p>Created symlink /etc/systemd/system/multi-user.target.wants/ip.service → /etc/systemd/system/ip.service.</p>
 
 Vamos edite o arquivo /etc/hosts
-<p>#vim /etc/hosts</p>
+<b><p>#vim /etc/hosts</p></b>
 <p>127.0.0.1 localhost</p>
 <p>127.0.1.1 ubuntu</p>
 
@@ -52,7 +52,7 @@ Vamos edite o arquivo /etc/hosts
 <p>'$inet_value'   ubuntu</p>
 
 Verifique se o comando funcionou e pegou o IP atual do servidor
-<p>#systemctl status ip.service</p>
+<b><p>#systemctl status ip.service</p></b>
 <p>○ ip.service - Update IP</p>
 <p>     Loaded: loaded (/etc/systemd/system/ip.service; enabled; vendor preset: enabled)</p>
 <p>     Active: inactive (dead) since Sat 2024-02-10 01:27:28 UTC; 4s ago</p>
